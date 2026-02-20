@@ -27,3 +27,44 @@
   margin: 2px;
   color: blueviolet;
 }
+
+
+/* Project 2*/
+
+.person-card {
+  width: 250px;
+  padding: 16px;
+  margin: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: solid 1px #333333;
+  transition: box-shadow 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.person-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.person-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.person-age,
+.person-licence {
+  font-size: 1rem;
+  color: #333333;
+  margin: 4px 0;
+}
+
+.person-licence .yes {
+  color: green;
+  font-weight: bold;
+}
+
+.person-licence .no {
+  color: red;
+  font-weight: bold;
+}
