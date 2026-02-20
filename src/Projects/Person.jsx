@@ -1,7 +1,8 @@
 function Person(props) {
   return (
-    <div className="person-card" onClick={props.onClick}>
+    <div className="person-card">
       <p className="person-name">Name: {props.name}</p>
+      <button onClick={props.onDeleteClick}>Delete</button>
       <p className="person-age">Age: {props.age}</p>
       <p className="person-licence">
         Driver Licence:
@@ -9,7 +10,9 @@ function Person(props) {
           {props.hasDriversLicence ? "Yes" : "No"}
         </span>
       </p>
-      <p>{props.selected ? props.description : "Click to see description"}</p>
+      <p onClick={props.toggleDescription}>
+        {props.selected ? props.description : "Click to see description"}
+      </p>
     </div>
   );
 }
