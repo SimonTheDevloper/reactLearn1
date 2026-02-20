@@ -3,7 +3,7 @@ import Person from "./Person.jsx";
 
 function Project3() {
   const persons = [
-    //these mock-data is AI generated
+    //these mock-data are AI generated
     {
       name: "Alice",
       age: 25,
@@ -81,7 +81,7 @@ function Project3() {
   const [selectedCard, setSelectedCard] = useState(null);
 
   function handleCardClick(i) {
-    setSelectedCard(i);
+    setSelectedCard(selectedCard === i ? null : i); // damit man toggeln kann wenn die karte wo drauf gedrück schon der index ist dann setzte wieder auf null
   }
   return (
     <>
