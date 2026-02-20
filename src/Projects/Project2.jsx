@@ -1,4 +1,5 @@
+import Card from "./Card.jsx";
 function Project2() {
-  return <h1>Project 2</h1>;
+  return <Card />;
 }
 export default Project2;

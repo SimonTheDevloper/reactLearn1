@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       <ProjectArea activeProject={activeProject} />
-      <ButtonArea handleClick={handleClick} />
+      <footer>
+        <ButtonArea handleClick={handleClick} />
+      </footer>
     </>
   );
 }
