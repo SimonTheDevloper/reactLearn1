@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Project8() {
   const [seconds, setSeconds] = useState(600);
   const [isRunning, setIsRunning] = useState(false);
 
+  const intervalRef = useRef(null);
+
   useEffect(() => {
-    if (seconds <= 0) return;
+    if (isRunning && seconds > 0) {
+      intervalRef.current = setInterval(() => {
+        setSeconds((prev) => prev - 1);
+      }, 1000);
+    } else {
+      clearInterval(intervalRef.current);
+    }
 
-    if (!isRunning) return;
-    const interval = setInterval(() => {
-      setSeconds((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [seconds, isRunning]);
+    return () => clearInterval(intervalRef.current);
+  }, [isRunning]);
 
   const generateTime = (totalSconds) => {
     const min = Math.floor(totalSconds / 60);
