@@ -369,3 +369,231 @@
   border-radius: 4px;
   cursor: pointer;
 }
+/* Project 8 - Timer */
+
+.Project8container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.Project8display {
+  text-align: center;
+}
+
+.Project8time {
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #25231f;
+  font-variant-numeric: tabular-nums;
+}
+
+.Project8time.danger {
+  color: #b85c4e;
+}
+
+.Project8done {
+  font-size: 16px;
+  color: #b85c4e;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.Project8progress-wrap {
+  width: 100%;
+  max-width: 340px;
+  height: 8px;
+  background-color: #e4ded4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.Project8progress-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s linear, background-color 0.5s;
+  background-color: #3a7063;
+}
+
+.Project8progress-bar.warning {
+  background-color: #ba7517;
+}
+
+.Project8progress-bar.danger {
+  background-color: #b85c4e;
+}
+
+.Project8presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.Project8preset-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 2px solid #e4ded4;
+  border-radius: 10px;
+  background: #fffef9;
+  cursor: pointer;
+  color: #6b665c;
+  font-weight: 500;
+}
+
+.Project8preset-btn:hover {
+  border-color: #3a7063;
+  color: #3a7063;
+}
+
+.Project8preset-btn.active {
+  background-color: #3a7063;
+  color: white;
+  border-color: #3a7063;
+}
+
+.Project8buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.Project8buttons button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 2px solid #e4ded4;
+  cursor: pointer;
+  background: #fffef9;
+  color: #25231f;
+}
+
+.Project8buttons .start-btn {
+  background: #3a7063;
+  color: white;
+  border-color: #3a7063;
+}
+
+.Project8buttons .reset-btn {
+  background: #fff4f2;
+  color: #b85c4e;
+  border-color: #f5d4cc;
+}
+
+.Project8custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b665c;
+}
+
+.Project8custom input {
+  width: 56px;
+  padding: 8px;
+  text-align: center;
+  font-size: 15px;
+  border: 2px solid #e4ded4;
+  border-radius: 10px;
+  background: #fbf9f4;
+  outline: none;
+}
+
+.Project8custom input:focus {
+  border-color: #3a7063;
+}
+
+
+/* Project 9 - Taschenrechner */
+
+.Project9container {
+  font-family: Arial, sans-serif;
+  max-width: 280px;
+  margin: 40px auto;
+  border: 1px solid #e4ded4;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fffef9;
+}
+
+.Project9screen {
+  padding: 16px 20px;
+  text-align: right;
+  border-bottom: 1px solid #e4ded4;
+  background: #fbf9f4;
+}
+
+.Project9expr {
+  font-size: 13px;
+  color: #6b665c;
+  min-height: 18px;
+  font-family: monospace;
+}
+
+.Project9result {
+  font-size: 36px;
+  font-weight: 700;
+  color: #25231f;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.Project9grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.Project9key {
+  height: 60px;
+  border: none;
+  border-right: 1px solid #e4ded4;
+  border-bottom: 1px solid #e4ded4;
+  background: #fffef9;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #25231f;
+  cursor: pointer;
+}
+
+.Project9key:nth-child(4n) {
+  border-right: none;
+}
+
+.Project9key:nth-last-child(-n+4) {
+  border-bottom: none;
+}
+
+.Project9key:hover {
+  background: #f3f0e8;
+}
+
+.Project9key:active {
+  background: #e4ded4;
+}
+
+.Project9key.op {
+  color: #3a7063;
+  font-weight: bold;
+}
+
+.Project9key.action {
+  color: #6b665c;
+}
+
+.Project9key.eq {
+  background: #3a7063;
+  color: white;
+  font-weight: bold;
+}
+
+.Project9key.eq:hover {
+  background: #2e5c50;
+}
+
+.Project9key.zero {
+  grid-column: span 2;
+}

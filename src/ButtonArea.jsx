@@ -8,6 +8,8 @@ function ButtonArea({ handleClick }) {
     { id: 6, title: "Project 6" },
     { id: 7, title: "Project 7" },
     { id: 8, title: "Project 8" },
+    { id: 9, title: "Project 9" },
+    { id: 10, title: "Project 10" },
   ];
   return (
     <div>
