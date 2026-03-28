@@ -1,9 +1,8 @@
 import { useState } from "react";
-
 function LocationCard({ fetchWeather }) {
   const [city, setCity] = useState("");
   return (
-    <div className="locationCard">
+    <div className="Project10locationCard">
       <input
         type="text"
         value={city}

@@ -1,6 +1,6 @@
-function FeedbackMsgCard({ content }) {
+function FeedbackMsgCard({ content, isError }) {
   return (
-    <div>
+    <div className={`Project10feedbackCard${isError ? " error" : ""}`}>
       <p>{content}</p>
     </div>
   );

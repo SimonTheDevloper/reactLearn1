@@ -1,12 +1,11 @@
-import { PuffLoader } from "react-spinners"; // von einer libary
-
+import { PuffLoader } from "react-spinners";
 function LoadingSpinner() {
   const override = {
     display: "block",
     margin: "0 auto",
   };
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
+    <div className="Project10spinner">
       <PuffLoader
         color="#36d7b7"
         loading={true}
@@ -18,5 +17,4 @@ function LoadingSpinner() {
     </div>
   );
 }
-
 export default LoadingSpinner;

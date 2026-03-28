@@ -45,8 +45,13 @@ function Project10() {
     <>
       <LocationCard fetchWeather={fetchWeather} />
       {loadingStatus === true && <LoadingSpinner />}
-      {data && <WeatherCard weather={data} />}
-      {feedBackMsg !== null && <FeedbackMsgCard content={feedBackMsg} />}
+      {feedBackMsg ? (
+        <FeedbackMsgCard content={feedBackMsg} />
+      ) : data ? (
+        <WeatherCard weather={data} />
+      ) : (
+        <FeedbackMsgCard content="You haven't gotten the weather for a city yet. Please search for a city to see the weather." />
+      )}
     </>
   );
 }
