@@ -9,20 +9,20 @@ import Project9 from "./Projects/Project9.jsx";
 import Project10 from "./Projects/Project10.jsx";
 
 function ProjectArea({ activeProject }) {
-  return (
-    <>
-      {activeProject === 1 && <h1>This is Project 1</h1>}
-      {activeProject === 2 && <Project2 />}
-      {activeProject === 3 && <Project3 />}
-      {activeProject === 4 && <Project4 />}
-      {activeProject === 5 && <Project5 />}
-      {activeProject === 6 && <Project6 />}
-      {activeProject === 7 && <Project7 />}
-      {activeProject === 8 && <Project8 />}
-      {activeProject === 9 && <Project9 />}
-      {activeProject === 10 && <Project10 />}
-    </>
-  );
+  const projectComponents = {
+    1: <h1>This is Project 1</h1>,
+    2: <Project2 />,
+    3: <Project3 />,
+    4: <Project4 />,
+    5: <Project5 />,
+    6: <Project6 />,
+    7: <Project7 />,
+    8: <Project8 />,
+    9: <Project9 />,
+    10: <Project10 />,
+  };
+
+  return <>{projectComponents[activeProject]}</>;
 }
 
 export default ProjectArea;

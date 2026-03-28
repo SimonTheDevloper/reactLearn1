@@ -3,7 +3,7 @@ import ButtonArea from "./ButtonArea.jsx";
 import ProjectArea from "./ProjectArea.jsx";
 
 function App() {
-  const [activeProject, setProject] = useState(null);
+  const [activeProject, setProject] = useState(1);
 
   function handleClick(projectnumber) {
     setProject(projectnumber);
@@ -12,7 +12,7 @@ function App() {
     <>
       <ProjectArea activeProject={activeProject} />
       <footer>
-        <ButtonArea handleClick={handleClick} />
+        <ButtonArea handleClick={handleClick} activeProject={activeProject} />
       </footer>
     </>
   );

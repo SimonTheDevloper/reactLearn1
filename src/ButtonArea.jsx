@@ -1,4 +1,4 @@
-function ButtonArea({ handleClick }) {
+function ButtonArea({ activeProject, handleClick }) {
   const projects = [
     { id: 1, title: "Project 1" },
     { id: 2, title: "Project 2" },
@@ -12,9 +12,13 @@ function ButtonArea({ handleClick }) {
     { id: 10, title: "Project 10" },
   ];
   return (
-    <div>
+    <div className="buttonArea">
       {projects.map((project) => (
-        <button key={project.id} onClick={() => handleClick(project.id)}>
+        <button
+          key={project.id}
+          onClick={() => handleClick(project.id)}
+          className={activeProject === project.id ? "active" : ""}
+        >
           {project.title}
         </button>
       ))}

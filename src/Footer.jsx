@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer>
+    <footer className="projectFooter ">
       <p>&copy; {new Date().getFullYear()} Made by Sim</p>
     </footer>
   );
