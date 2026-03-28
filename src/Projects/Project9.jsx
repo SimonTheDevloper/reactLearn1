@@ -23,7 +23,7 @@ function Project9() {
   };
 
   const handleOp = (op) => {
-    const sym = { "*": "×", "/": "÷", "+": "+", "-": "−" }[op];
+    const sym = { "*": "x", "/": "÷", "+": "+", "-": "-" }[op];
     const val = parseFloat(current);
     setPrev(val);
     setOperator(op);
@@ -42,7 +42,7 @@ function Project9() {
     if (!operator || prev === null) return;
     const b = parseFloat(current);
     const result = calc(prev, operator, b);
-    const sym = { "*": "×", "/": "÷", "+": "+", "-": "−" }[operator];
+    const sym = { "*": "x", "/": "÷", "+": "+", "-": "-" }[operator];
     setExpr(`${fmt(prev)} ${sym} ${fmt(b)} =`);
     setCurrent(result === null ? "Fehler" : fmt(result));
     setPrev(null);
@@ -93,7 +93,7 @@ function Project9() {
           </button>
         ))}
         <button className="Project9key op" onClick={() => handleOp("*")}>
-          ×
+          x
         </button>
 
         {[4, 5, 6].map((n) => (
@@ -106,7 +106,7 @@ function Project9() {
           </button>
         ))}
         <button className="Project9key op" onClick={() => handleOp("-")}>
-          −
+          -
         </button>
 
         {[1, 2, 3].map((n) => (
