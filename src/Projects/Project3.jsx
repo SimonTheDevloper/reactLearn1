@@ -93,31 +93,29 @@ function Project3() {
   const [persons, setPersons] = useState(personsData);
 
   function handleDescriptionClick(i) {
-    setSelectedCard(selectedCard === i ? null : i); // damit man toggeln kann wenn die karte wo drauf gedrück schon der index ist dann setzte wieder auf null
+    setSelectedCard(selectedCard === i ? null : i);
   }
+
   function handleDelteClick(i) {
     const updatedPersonArr = persons.filter((person) => person.id !== i);
-    console.log(updatedPersonArr);
     setPersons(updatedPersonArr);
   }
 
   return (
-    <>
-      <div>
-        {persons.map((person, index) => (
-          <Person
-            key={index}
-            name={person.name}
-            age={person.age}
-            hasDriversLicence={person.hasDriversLicence}
-            selected={selectedCard === index}
-            toggleDescription={() => handleDescriptionClick(index)}
-            onDeleteClick={() => handleDelteClick(person.id)}
-            description={person.description}
-          />
-        ))}
-      </div>
-    </>
+    <div className="Project3container">
+      {persons.map((person, index) => (
+        <Person
+          key={index}
+          name={person.name}
+          age={person.age}
+          hasDriversLicence={person.hasDriversLicence}
+          selected={selectedCard === index}
+          toggleDescription={() => handleDescriptionClick(index)}
+          onDeleteClick={() => handleDelteClick(person.id)}
+          description={person.description}
+        />
+      ))}
+    </div>
   );
 }
 export default Project3;
