@@ -1,20 +1,26 @@
 import { useState } from "react";
 import LocationCard from "./LocationCard.jsx";
 import WeatherCard from "./WeatherCard.jsx";
+import LoadingSpinner from "./LoadingSpinner.jsx";
+import FeedbackMsgCard from "./FeedbackMsgCard.jsx";
 
 function Project10() {
   const [data, setData] = useState(null);
-  const [loadingStatus, setLoadingStatus] = useState(true);
+  const [loadingStatus, setLoadingStatus] = useState(false);
+  const [feedBackMsg, setFeedBackMsg] = useState(null);
 
   const fetchWeather = async (stadt) => {
     try {
+      setLoadingStatus(true);
+      setData(null);
       const koordsResponse = await fetch(
         `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(stadt)}&language=de`,
       );
       const koordsData = await koordsResponse.json();
 
       if (!koordsData.results || koordsData.results.length === 0) {
-        console.error("Keine Stadt gefunden!");
+        setFeedBackMsg("City not found!");
+        setLoadingStatus(false);
         return;
       }
 
@@ -28,15 +34,19 @@ function Project10() {
 
       console.log(weatherData);
       setData(weatherData);
+      setLoadingStatus(false);
     } catch (error) {
+      setLoadingStatus(false);
+      setFeedBackMsg("Failed to load data. Please try it again.");
       console.error("Fehler beim Laden der Daten:", error);
     }
   };
   return (
     <>
       <LocationCard fetchWeather={fetchWeather} />
-
+      {loadingStatus === true && <LoadingSpinner />}
       {data && <WeatherCard weather={data} />}
+      {feedBackMsg !== null && <FeedbackMsgCard content={feedBackMsg} />}
     </>
   );
 }
