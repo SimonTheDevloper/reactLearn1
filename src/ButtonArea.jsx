@@ -12,7 +12,7 @@ function ButtonArea({ activeProject, handleClick }) {
     { id: 10, title: "Project 10" },
   ];
   return (
-    <div className="buttonArea">
+    <div className="buttonArea buttonRow">
       {projects.map((project) => (
         <button
           key={project.id}

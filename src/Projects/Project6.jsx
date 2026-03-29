@@ -26,7 +26,7 @@ function Project6() {
   }
 
   return (
-    <div className="Project6container">
+    <div className="Project6container projectBox">
       <h2> Order Manager</h2>
 
       <div className="Project6form">

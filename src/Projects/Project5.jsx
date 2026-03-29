@@ -69,7 +69,7 @@ function Project5() {
     }
   };
   return (
-    <main className="prot5">
+    <main className="prot5 projectBox">
       <div className="counter">
         <p>
           Your Count is: <span>{count}</span>

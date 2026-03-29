@@ -102,7 +102,7 @@ function Project3() {
   }
 
   return (
-    <div className="Project3container">
+    <div className="Project3container projectBox">
       {persons.map((person, index) => (
         <Person
           key={index}

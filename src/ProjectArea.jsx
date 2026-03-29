@@ -22,7 +22,7 @@ function ProjectArea({ activeProject }) {
     10: <Project10 />,
   };
 
-  return <>{projectComponents[activeProject]}</>;
+  return <div>{projectComponents[activeProject]}</div>;
 }
 
 export default ProjectArea;

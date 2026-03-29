@@ -63,11 +63,9 @@ function Project9() {
   const handlePercent = () => setCurrent((c) => fmt(parseFloat(c) / 100));
 
   return (
-    <div className="Project9container">
-      <div className="Project9screen">
-        <div className="Project9expr">{expr}</div>
-        <div className="Project9result">{current}</div>
-      </div>
+    <div className="Project9container projectBox">
+      <div className="Project9expr">{expr}</div>
+      <div className="Project9result">{current}</div>
 
       <div className="Project9grid">
         <button className="Project9key action" onClick={handleClear}>

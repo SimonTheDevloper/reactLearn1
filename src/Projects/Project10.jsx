@@ -42,7 +42,7 @@ function Project10() {
     }
   };
   return (
-    <>
+    <div className="Project10container projectBox">
       <LocationCard fetchWeather={fetchWeather} />
       {loadingStatus === true && <LoadingSpinner />}
       {feedBackMsg ? (
@@ -52,7 +52,7 @@ function Project10() {
       ) : (
         <FeedbackMsgCard content="You haven't gotten the weather for a city yet. Please search for a city to see the weather." />
       )}
-    </>
+    </div>
   );
 }
 export default Project10;

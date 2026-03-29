@@ -8,13 +8,15 @@ function App() {
   function handleClick(projectnumber) {
     setProject(projectnumber);
   }
+
   return (
     <>
       <ProjectArea activeProject={activeProject} />
-      <footer>
+      <footer className="projectFooter">
         <ButtonArea handleClick={handleClick} activeProject={activeProject} />
       </footer>
     </>
   );
 }
+
 export default App;

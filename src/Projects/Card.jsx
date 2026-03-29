@@ -1,6 +1,6 @@
 function Card() {
   return (
-    <div className="card">
+    <div className="card projectBox">
       <img
         className="card-img"
         src="https://cdn-icons-png.flaticon.com/128/8419/8419169.png"

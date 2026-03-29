@@ -23,7 +23,7 @@ function Project4() {
   }
   return (
     <div
-      className="random-color-container"
+      className="random-color-container projectBox"
       style={{ backgroundColor: randomColor }}
     >
       <button className="random-color-btn" onClick={handleClickBtn}>

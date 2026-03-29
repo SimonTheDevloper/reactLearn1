@@ -53,7 +53,7 @@ function Project8() {
   };
 
   return (
-    <div className="Project8container">
+    <div className="Project8container projectBox">
       <div className="Project8display">
         <div
           className={`Project8time${seconds <= 10 && seconds > 0 ? " danger" : ""}`}

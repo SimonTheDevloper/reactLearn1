@@ -30,10 +30,10 @@ function Project7() {
   }
 
   return (
-    <div className="Project7container">
+    <div className="Project7container projectBox">
       <h2>Car Configurator</h2>
       <div className="Project7preview">
-        {car.year} {car.make} {car.model} – {car.color} – {car.km} km
+        {car.year} {car.make} {car.model}- {car.color} -{car.km} km
       </div>
       <div className="Project7form">
         <div className="Project7row">
