@@ -1,5 +1,5 @@
-/* === GRUNDLAYOUT: FIXER FOOTER + PROJEKTE GLEICH GROSS + FAST BIS ZUM RAND === */
-*{box-sizing:border-box;margin:0;padding:0}
+/*// DE: Ja hier ist vieles KI generiert, aber vorallem wurde von KI geschrieben das alles dann  das gleiche Design hat*/
+/*// EN:  Yes, a lot of this is AI-generated, but most importantly, the AI wrote it all so that it has the same design*/
 :root{--bg:#f9f7f2;--surface:#fffef9;--border:#e4ded4;--primary:#3a7063;--text:#25231f;--muted:#6b665c;--accent:#2e5c50;--shadow:0 10px 25px rgba(37,35,31,.08)}
 html,body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100%;}
 body{overflow:auto;display:flex;flex-direction:column;min-height:100vh;}
@@ -206,8 +206,9 @@ body{overflow:auto;display:flex;flex-direction:column;min-height:100vh;}
 
 
 /* === ALLE ANDEREN PROJEKTE – ORIGINAL-DESIGN BLEIBT 100% ERHALTEN === */
-.card{border:3px solid rgb(168,198,206);border-radius:10px;padding:30px;margin:10px;text-align:center;max-width:250px;display:block;background-color:rgb(207,234,241)}
-.card .card-img{max-width:30%;height:auto;border-radius:30%;border:2px solid rgb(165,188,194);background-color:rgba(178,255,255,.801);margin-bottom:1px}
+.card{border:3px solid rgb(168,198,206);border-radius:10px;padding:30px;margin:20px auto;text-align:center;max-width:320px;width:100%;display:block;background-color:rgb(207,234,241)}
+.project2Card{max-width:460px;min-width:320px;margin:40px auto;}
+.card .card-img{max-width:40%;height:auto;border-radius:30%;border:2px solid rgb(165,188,194);background-color:rgba(178,255,255,.801);margin-bottom:1px}
 .card .card-title{font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;margin:0;color:rgb(0,195,255)}
 .card .card-description{font-family:Georgia,'Times New Roman',Times,serif;margin:2px;color:blueviolet}
 
@@ -230,7 +231,124 @@ body{overflow:auto;display:flex;flex-direction:column;min-height:100vh;}
 .modal-content{background:white;padding:24px;border-radius:12px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1)}
 .modal-content button{margin-top:15px;padding:8px 20px;cursor:pointer;border:1px solid #ddd;background:#eee;border-radius:4px}
 
-.prot5{margin:0;background:#f9f7f2;font-family:system-ui,-apple-system,sans-serif;color:#25231f;line-height:1.4}
+.counter {
+  max-width: 850px;
+  width: 100%;
+  margin: 40px auto;          
+  padding: 52px 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.counter p {
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.counter span {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -8px;
+  color: var(--text);
+  display: block;
+  margin: 24px 0 48px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+.buttons button {
+  padding: 18px 36px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  cursor: pointer;
+  min-width: 138px;
+  transition: all 0.2s ease;
+}
+
+.buttons button:nth-child(1) { background: var(--primary); color: white; border-color: var(--primary); }
+.buttons button:nth-child(2) { background: #64748b; color: white; border-color: #64748b; }
+.buttons button:nth-child(3) { background: #fff4f2; color: #b85c4e; border-color: #f5d4cc; }
+
+.buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}.amount p {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+}.amount input {
+  width: 100%;
+  max-width: 220px;
+  padding: 18px 24px;
+  font-size: 29px;
+  text-align: center;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background: #fbf9f4;
+  outline: none;
+}.amount input:focus {
+  border-color: var(--primary);
+}.addCustomBtn {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px dashed var(--primary);
+  border-radius: 14px;
+  background: #fbf9f4;
+  color: var(--primary);
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.2s ease;
+}.addCustomBtn:hover {
+  background: var(--primary);
+  color: white;
+  border-style: solid;
+}@media (max-width: 768px) {
+  .counter {
+    margin: 30px 16px;
+    padding: 40px 24px;
+  }
+  
+  .counter span {
+    font-size: 52px;        
+    letter-spacing: -4px;
+  }
+  
+  .buttons button {
+    padding: 16px 24px;
+    font-size: 16px;
+    min-width: 110px;
+  }
+  
+  .amount input {
+    font-size: 24px;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter span {
+    font-size: 44px;
+  }
+}
 
 .Project6container{max-width:700px;margin:24px auto;padding:20px;display:flex;flex-direction:column;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.07);font-family:Arial,sans-serif}
 .Project6container h2{font-size:20px;color:#25231f;margin-bottom:16px}
@@ -268,7 +386,7 @@ body{overflow:auto;display:flex;flex-direction:column;min-height:100vh;}
 .Project8custom input{width:56px;padding:8px;text-align:center;font-size:15px;border:2px solid #e4ded4;border-radius:10px;background:#fbf9f4;outline:none}
 .Project8custom input:focus{border-color:#3a7063}
 
-.Project9container{width:100%;max-width:400px;margin:24px auto;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.07);border-radius:16px;border:1px solid var(--border);background:var(--surface);font-family:Arial,sans-serif}
+.Project9container{width:100%;max-width:340px;margin:24px auto;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,.07);border-radius:16px;border:1px solid var(--border);background:var(--surface);font-family:Arial,sans-serif}
 .Project9expr{font-size:13px;color:#6b665c;min-height:18px;font-family:monospace;padding:8px 0}
 .Project9result{font-size:36px;font-weight:700;color:#25231f;font-family:monospace;word-break:break-all;padding:8px 0}
 .Project9grid{display:grid;grid-template-columns:repeat(4,1fr)}
