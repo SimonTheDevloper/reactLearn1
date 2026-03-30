@@ -7,10 +7,11 @@ import Project7 from "./Projects/Project7.jsx";
 import Project8 from "./Projects/Project8.jsx";
 import Project9 from "./Projects/Project9.jsx";
 import Project10 from "./Projects/Project10.jsx";
+import Startpage from "./Projects/Startpage.jsx";
 
 function ProjectArea({ activeProject }) {
   const projectComponents = {
-    1: <h1>This is Project 1</h1>,
+    1: <Startpage />,
     2: <Project2 />,
     3: <Project3 />,
     4: <Project4 />,
