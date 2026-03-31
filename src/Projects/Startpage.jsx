@@ -9,7 +9,7 @@ function Startpage() {
       setShowInfoModal(true);
       sessionStorage.setItem("ersterAufruf", "true");
     }
-  }, []);
+  }, []); // ist leer, da es nur beim 1. Mal und einmaal passieren soll.
   return (
     <>
       <h1>This is Project 1</h1>
