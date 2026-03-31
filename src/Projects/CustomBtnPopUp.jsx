@@ -22,12 +22,14 @@ function CustomBtnPopUp({
           value={newValue}
           onChange={(e) => setNewValue(e.target.value)}
         />
-        <button className="saveBtn" onClick={onSave}>
-          save
-        </button>
-        <button className="cancelBtn" onClick={onCancel}>
-          cancel
-        </button>
+        <div className="customBtnPopUp-actions">
+          <button className="saveBtn" onClick={onSave}>
+            save
+          </button>
+          <button className="cancelBtn" onClick={onCancel}>
+            cancel
+          </button>
+        </div>
       </div>
     </div>
   );
