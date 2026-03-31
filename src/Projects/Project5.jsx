@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CounterBtn from "./CounterBtn.jsx";
 import CustomBtnPopUp from "./CustomBtnPopUp.jsx";
 import { evaluate } from "mathjs";
@@ -6,13 +6,29 @@ import { evaluate } from "mathjs";
 function Project5() {
   const [count, setCount] = useState(() => {
     const gespeichert = localStorage.getItem("count");
-    return gespeichert !== null ? gespeichert : "";
+    return gespeichert !== null ? Number(gespeichert) : 0;
   });
   const [amount, setAmount] = useState(1);
+  const amountRef = useRef(amount);
+
   const [error, setError] = useState(null);
-  const [btns, setBtns] = useState([
-    { label: "+", action: () => setCount((a) => a + 1) },
-    { label: "-", action: () => setCount((a) => a - 1) },
+
+  const [customBtns, setCustomBtns] = useState([]);
+  const [newLabel, setNewLabel] = useState("");
+  const [newValue, setNewValue] = useState(null);
+  const [showCustomBtnPopUp, setShowCustomBtnPopUp] = useState(false);
+  const maxLimitAmount = 100;
+
+  useEffect(() => {
+    amountRef.current = amount;
+  }, [amount]);
+  useEffect(() => {
+    // fürt das bei jeder count änderung aus
+    localStorage.setItem("count", count);
+  }, [count]);
+  const staticBtns = [
+    { label: "+", action: () => setCount((a) => a + amountRef.current) },
+    { label: "-", action: () => setCount((a) => a - amountRef.current) },
     { label: "reset", action: () => setCount(0) },
     { label: "+10", action: () => setCount((a) => a + 10) },
     { label: "-10", action: () => setCount((a) => a - 10) },
@@ -23,19 +39,12 @@ function Project5() {
       action: () => setCount(Math.floor(Math.random() * 100)),
     },
     { label: "half", action: () => setCount((a) => a / 2) },
-    { label: "round off", action: () => setCount((a) => Math.abs(a)) },
+    { label: "abs", action: () => setCount((a) => Math.abs(a)) }, // war "round off"
+    { label: "round", action: () => setCount((a) => Math.round(a)) }, // neu: nächste Ganzzahl
     { label: "round up", action: () => setCount((a) => Math.ceil(a)) },
+    { label: "round down", action: () => setCount((a) => Math.floor(a)) }, // neu
     { label: "10%", action: () => setCount((a) => a * 0.1) },
-  ]);
-  const [newLabel, setNewLabel] = useState("");
-  const [newValue, setNewValue] = useState(null);
-  const [showCustomBtnPopUp, setShowCustomBtnPopUp] = useState(false);
-  const maxLimitAmount = 100;
-
-  useEffect(() => {
-    // fürt das bei jeder count änderung aus
-    localStorage.setItem("count", count);
-  }, [count]);
+  ];
 
   const addEigenenBtn = () => {
     const newBtn = {
@@ -51,7 +60,7 @@ function Project5() {
           }
         }),
     };
-    setBtns([...btns, newBtn]);
+    setCustomBtns((prev) => [...prev, newBtn]);
     setShowCustomBtnPopUp(false);
     setNewLabel("");
     setNewValue("");
@@ -68,6 +77,9 @@ function Project5() {
       setAmount(value);
     }
   };
+
+  const allBtns = [...staticBtns, ...customBtns];
+
   return (
     <main className="prot5 projectBox">
       <div className="counter">
@@ -76,7 +88,7 @@ function Project5() {
         </p>
 
         <div className="buttons">
-          {btns.map((item, index) => (
+          {allBtns.map((item, index) => (
             <CounterBtn key={index} text={item.label} onClick={item.action} />
           ))}
           <button
