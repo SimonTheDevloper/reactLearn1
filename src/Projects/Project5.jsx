@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CounterBtn from "./CounterBtn.jsx";
-import CustomBtnPopUp from "./customBtnPopUp.jsx";
+import CustomBtnPopUp from "./CustomBtnPopUp.jsx";
 import { evaluate } from "mathjs";
 
 function Project5() {
