@@ -13,6 +13,7 @@ function Project10() {
     try {
       setLoadingStatus(true);
       setData(null);
+      setFeedBackMsg(null);
       const koordsResponse = await fetch(
         `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(stadt)}&language=de`,
       );
